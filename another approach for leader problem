@@ -1,0 +1,19 @@
+public class leadersec {
+    public static void leaderr(int arr[]){
+        int n = arr.length;
+        
+        int last = arr[n-1];
+        System.out.println(last);
+        for (int i = n-2; i < arr.length; i--) {
+            if(arr[i] > last){
+               last = arr[i];
+               System.out.println(last);
+            }
+        }
+        
+    }
+    public static void main(String[] args) {
+        int arr[] ={7,1,4,10,6,5,2};
+        leaderr(arr);
+    }
+}
