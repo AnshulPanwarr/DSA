@@ -1,0 +1,18 @@
+class Solution {
+    public static int removeElement(int[] nums, int val) {
+        int n = nums.length;
+        int temp[] = new int[n];
+        
+        int res =0;
+        for(int i=0;i<n;i++){
+            if(nums[i] != val){
+                temp[res] = nums[i];
+                res++;
+            }
+        }
+        for(int i = 0;i<res;i++){
+            nums[i] = temp[i];
+        }
+       return res;
+    }
+}
