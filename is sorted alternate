@@ -1,0 +1,16 @@
+public class eff {
+   public static  boolean isright(int arr[]){
+    for (int i = 1; i < arr.length; i++) {
+        if(arr[i]<arr[i-1]){
+            return false;
+        }
+    }
+    return true;
+   }
+   public static void main(String[] args) {
+    int []arr = {13,10,12,15};
+    boolean res = isright(arr);
+    System.out.println(res);
+   }
+    
+}
