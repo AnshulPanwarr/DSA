@@ -1,0 +1,36 @@
+class Solution {
+    public int trap(int[] height) {
+        int n = height.length;
+        int volume = 0;
+        for(int i =1;i<n-1;i++){
+
+            int lmax = height[i];
+            for(int j =0 ; j<i;j++){
+                lmax = Math.max(lmax,height[j]);
+                
+
+            }
+
+            int rmin = height[i];
+            for(int j =i+1;j<n;j++){
+                rmin = Math.max(rmin,height[j]);
+
+           
+
+            }
+
+             volume = volume+ (Math.min(lmax,rmin)-height[i]);
+
+
+
+
+            
+        }
+        
+           
+
+       
+      return volume;  
+    }
+    
+}
