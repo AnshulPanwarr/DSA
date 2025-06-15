@@ -1,0 +1,28 @@
+class Solution {
+    public String completeString(List<String> nums) {
+        Set<String> set = new HashSet<>(nums);
+        String result = "";
+
+        for (String word : nums) {
+            boolean allPrefixesExist = true;
+
+            
+            for (int i = 1; i <= word.length(); i++) {
+                String prefix = word.substring(0, i);
+                if (!set.contains(prefix)) {
+                    allPrefixesExist = false;
+                    break;
+                }
+            }
+
+            if (allPrefixesExist) {
+                if (word.length() > result.length() || 
+                   (word.length() == result.length() && word.compareTo(result) < 0)) {
+                    result = word;
+                }
+            }
+        }
+
+        return result.isEmpty() ? "None" : result;
+    }
+}
